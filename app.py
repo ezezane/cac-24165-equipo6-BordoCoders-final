@@ -6,7 +6,7 @@ from werkzeug.utils import secure_filename
 # imports
 import os
 import time
-
+# 
 # carpeta donde se guardarán los archivos cargados por el CRUD
 UPLOAD_FOLDER = 'static/img/uploads/'
 # extensiones aceptadas
