@@ -7,8 +7,12 @@ from werkzeug.utils import secure_filename
 import os
 import time
 # 
-# carpeta donde se guardarán los archivos cargados por el CRUD
-UPLOAD_FOLDER = 'static/img/uploads/'
+
+# carpeta LOCAL donde se guardarán los archivos cargados por el CRUD
+UPLOAD_FOLDER = '/static/img/uploads/'
+# carpeta en pythonanywhere
+#UPLOAD_FOLDER = 'cac-24165-equipo6-BordoCoders-final/static/img/uploads/'
+
 # extensiones aceptadas
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
@@ -111,11 +115,7 @@ def crear_productos_img_db():
             prod_precio = request.form['precio']
             prod_URLimg = filename
             result = CreateDB(prod_marca,prod_name,prod_precio,prod_URLimg)
-
-            #mensaje = '<div class="alert alert-success"><p>Se creó correctamente el producto</p></div>'
             return redirect("/admin/")
-            #return redirect(url_for("/admin/", mensaje=mensaje))
-            #return redirect(url_for('/admin/', mensaje=mensaje))
 
 
 
