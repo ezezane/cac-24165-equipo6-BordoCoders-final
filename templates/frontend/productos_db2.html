@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		{% include 'frontend/_modulo_head.html' %}
+	</head>
+	<body>
+		{% include 'frontend/_modulo_header_carrousel.html' %}
+
+		{% include 'frontend/_modulo_header_logo.html' %}
+
+		{% include 'frontend/_modulo_menu.html' %}
+
+		<!-- CONTENIDO DE LA PÁGINA -->
+		<main class="container-fluid">
+			<h2 class="titulo-b mt20">Nuestros Productos</h2>
+
+			<!-- productos -->
+			<div class="row mt50">
+				{% for i in productos %}
+					<div class="col-xs-12 col-md-6 col-xl-4">
+						<article class="text-center">
+							<img class="producto-img" src="/static/img/uploads/{{i[4]}}" alt="{{i[2]}}" style="max-width: 200px;">
+							<p class="producto-marca">{{i[1]}}</p>
+							<p class="producto-nombre">{{i[2]}}</p>
+							<p class="producto-precio">{{i[3]}}</p>
+						</article>
+					</div>
+				{% endfor%}
+			</div>
+		</main>
+		<!-- FIN CONTENIDO DE LA PÁGINA -->
+
+
+		{% include 'frontend/_modulo_whatsapp.html' %}
+
+		{% include 'frontend/_modulo_footer.html' %}
+
+		
+	</body>
+</html>

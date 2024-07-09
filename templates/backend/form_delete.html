@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		{% include 'frontend/_modulo_head.html' %}
+	</head>
+	<body>
+
+		{% include 'frontend/_modulo_header_logo.html' %}
+
+		<!-- CONTENIDO DE LA PÁGINA -->
+		<div class="container">
+		
+		<h1 class="bg-danger">Borrar producto en DB</h1>
+
+		<main>
+
+			<form class="mb-3" action="/eliminar_producto/{{producto[0]}}" method="POST">
+				<!-- id del producto oculto para enviar en el update -->
+				<input type="hidden" name="id" value="{{producto[0]}}">
+
+				<div class="form-group mb-3 row">
+                    <label for="marca" class="col-sm-1 col-form-label">Marca:</label>
+					<div class="col-sm-11">
+						<input type="text" class="form-control-plaintext" id="marca" name="marca" value="{{producto[1]}}" readonly>
+					</div>
+				</div>
+
+				<div class="form-group mb-3 row">
+					<label for="name" class="col-sm-1 col-form-label">Nombre:</label>
+					<div class="col-sm-11">
+						<input type="text" class="form-control-plaintext" id="name" name="name" value="{{producto[2]}}" readonly>
+					</div>
+				</div>
+
+				<div class="form-group mb-3 row">
+					<label for="precio" class="col-sm-1 col-form-label">Precio:</label>
+					<div class="col-sm-11">
+						<input type="text" class="form-control-plaintext" id="precio" name="precio" value="{{producto[3]}}" readonly>
+					</div>
+				</div>
+
+				<div class="form-group mb-3 row">
+					<label for="imgURL" class="col-sm-1 col-form-label">Imagen:</label>
+					<div class="col-sm-11">
+						<input type="text" class="form-control-plaintext" id="imgURL" name="imgURL" value="{{producto[4]}}" readonly>
+					</div>
+				</div>
+
+				<div class="form-group mb-3">
+					<img src="{{producto[4]}}" alt="{{producto[1]}} {{producto[2]}}" style="max-width: 220px;">
+				</div>
+
+				<button type="submit" class="btn btn-danger">Eliminar producto</button>
+				<a href="/admin/"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+			</form>
+		</main>
+		<!-- FIN CONTENIDO DE LA PÁGINA -->
+		</div>
+
+		{% include 'frontend/_modulo_whatsapp.html' %}
+
+		{% include 'frontend/_modulo_footer.html' %}
+
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		{% include 'frontend/_modulo_head.html' %}
+	</head>
+	<body>
+		{% include 'frontend/_modulo_header_carrousel.html' %}
+
+		{% include 'frontend/_modulo_header_logo.html' %}
+
+		{% include 'frontend/_modulo_menu.html' %}
+
+
+		<!-- CONTENIDO DE LA PÁGINA -->
+		<main id="main-index">
+			<!-- carousel imagenes -->
+			<div class="p-0 container-fluid">
+				<div class="carouselExampleControls carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="{{url_for('static',filename='img/home_carrousel_a.png')}}" class="d-block w-100" alt="modelo femenina con perfume">
+						</div>
+						<div class="carousel-item">
+							<img src="{{url_for('static',filename='img/home_carrousel_b.jpg')}}" class="d-block w-100" alt="Modelo masculino con perfume">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h2 class="titulo mt-3">Nuevos lanzamientos</h2>
+			</div>
+
+			<!-- productos -->
+			<div class="container-fluid">
+				<div class="row">
+					{% for i in productosD %}
+						<div class="col-xs-12 col-md-6">
+							<article class="text-center">
+								<img class="producto-img" src="/static/img/uploads/{{i[4]}}" alt="{{i[2]}}" style="max-width: 220px;">
+								<p class="producto-marca">{{i[1]}}</p>
+								<p class="producto-nombre">{{i[2]}}</p>
+								<p class="producto-precio">{{i[3]}}</p>
+							</article>
+						</div>
+            	{% endfor%}
+				</div>
+			</div>
+
+			<!-- carousel créditos-->
+			<div class="carousel">
+				<div class="carouselExampleControls carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<h3 class="titulo">Aprovechá los nuevos productos</h3>
+						</div>
+						<div class="carousel-item">
+							<h3 class="titulo">Disponibles hasta agotar stock</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- FIN CONTENIDO DE LA PÁGINA -->
+
+
+		{% include 'frontend/_modulo_whatsapp.html' %}
+
+		{% include 'frontend/_modulo_footer.html' %}
+
+		{% include 'frontend/_modulo_js_front.html' %}
+	</body>
+</html>

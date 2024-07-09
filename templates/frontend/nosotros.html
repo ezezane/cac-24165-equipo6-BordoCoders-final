@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+		{% include 'frontend/_modulo_head.html' %}
+	</head>
+    <body>
+        {% include 'frontend/_modulo_header_carrousel.html' %}
+
+        {% include 'frontend/_modulo_header_logo.html' %}
+
+        {% include 'frontend/_modulo_menu.html' %}
+
+        <!-- CONTENIDO DE LA PÁGINA -->
+        <main>
+            <h2 class="titulo-b mt20">Sobre nosotros</h2>
+
+            <div class="container-nosotros">
+                <!-- PÁRRAFO 1 CON IMAGEN IZQ -->
+                <div class="container-desc">
+
+                    <img src="{{url_for('static',filename='img/nosotros-01.jpg')}}" alt="Borbo Perfumería">
+
+                    <div class="img-izq">
+                        <p>En Borbo Perfumería, nuestra pasión es conectar a nuestros clientes con las fragancias más
+                            cautivadoras del mundo. Aunque no producimos los perfumes directamente, seleccionamos
+                            cuidadosamente las creaciones de las mejores casas perfumistas para ofrecerte una experiencia
+                            única.</p>
+
+                        <h3>Nuestra Historia</h3>
+
+                        <p>Fundada en 2010 por la amante de los aromas, Isabella Martínez, Borbo Perfumería nació con la
+                            visión de llevar la magia de las fragancias a cada rincón del mundo. Desde entonces, hemos
+                            crecido y evolucionado, pero nuestra esencia sigue siendo la misma: la búsqueda incansable de la
+                            excelencia olfativa.</p>
+                    </div>
+                </div>
+
+
+                <h3>Nuestros Valores</h3>
+
+                <ol class="m-list">
+                    <li>Pasión por los Aromas: Nos encanta explorar y compartir el arte de la perfumería. Cada fragancia
+                        cuenta una historia, y queremos que encuentres la tuya.</li>
+                    <li>Selección Exclusiva: Nuestra curaduría se basa en la excelencia. Trabajamos con marcas reconocidas y
+                        emergentes para brindarte una selección exclusiva de perfumes que reflejan tu estilo y personalidad.
+                    </li>
+                    <li>Atención Personalizada: Nuestro equipo está aquí para asesorarte. Desde elegir el perfume perfecto
+                        hasta encontrar el regalo ideal, estamos comprometidos con tu satisfacción.</li>
+                </ol>
+
+
+                <!-- PÁRRAFO 1 CON IMAGEN DER -->
+                <div class="container-desc">
+                    <div class="img-der">
+                        <h3>Nuestro Compromiso</h3>
+
+                        <p>En Borbo Perfumería, creemos que los aromas pueden transformar momentos ordinarios en
+                            extraordinarios. Cada frasco que ofrecemos es una invitación a un viaje sensorial, una conexión
+                            con la belleza y la emoción. Nos esforzamos por:</p>
+
+                        <ul class="m-list">
+                            <li>Innovar Constantemente: Exploramos nuevas tendencias y descubrimientos en la perfumería para
+                                sorprenderte con opciones frescas y emocionantes.</li>
+                            <li>Celebrar la Diversidad: Cada persona tiene su aroma único. Nuestra variedad de fragancias
+                                refleja la diversidad de gustos y personalidades.</li>
+                            <li>Cuidar del Planeta: Nos comprometemos a trabajar con marcas que comparten nuestra
+                                responsabilidad ambiental.</li>
+                        </ul>
+
+                        <p>Únete a nosotros en este viaje olfativo. Borbo Perfumería es más que una tienda; es una
+                            experiencia sensorial que te invita a descubrir el mundo a través de los aromas. <br>
+                            ¡Bienvenido/a a nuestra comunidad perfumada!</p>
+                    </div>
+
+                    <img src="{{url_for('static',filename='img/nosotros-02.jpg')}}" alt="Borbo Perfumería">
+                </div>
+            </div>
+
+            <div></div>
+        </main>
+        <!-- FIN CONTENIDO DE LA PÁGINA -->
+
+
+        {% include 'frontend/_modulo_whatsapp.html' %}
+
+        {% include 'frontend/_modulo_footer.html' %}
+
+        {% include 'frontend/_modulo_js_front.html' %}
+    </body>
+</html>

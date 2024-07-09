@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		{% include 'frontend/_modulo_head.html' %}
+	</head>
+	<body>
+
+		{% include 'frontend/_modulo_header_logo.html' %}
+
+		<div class="container">
+			<!-- CONTENIDO DE LA PÁGINA -->
+		
+		<h1>Listado de productos</h1>
+
+		<main>
+			<a href="/admin/crear" class="btn btn-success">Crear producto</a>
+
+			<!-- productos -->
+			<div class="listado-prod-back">
+				<div class="row text-center">
+					<div class="col-1">
+						<h2>ID</h2>
+					</div>
+					<div class="col-2">
+						<h2>imagen</h2>
+					</div>
+					<div class="col-2">
+						<h2>producto</h2>
+					</div>
+					<div class="col-2">
+						<h2>marca</h2>
+					</div>
+					<div class="col-2">
+						<h2>precio</h2>
+					</div>
+					<div class="col-2">
+						<h2>acciones</h2>
+					</div>
+				</div>
+				<hr>
+				{% for i in productos %}
+					<div class="row text-center">
+						<div class="col-1">
+							<span class="producto-precio align-bottom">{{i[0]}}</span>
+						</div>
+						<div class="col-2">
+							<img class="producto-img" src="/static/img/uploads/{{i[4]}}" alt="{{i[2]}}" style="max-width: 220px;">
+						</div>
+						<div class="col-2">
+							<span class="producto-marca">{{i[1]}}</span>
+						</div>
+						<div class="col-2">
+							<span class="producto-nombre align-bottom">{{i[2]}}</span>
+						</div>
+						<div class="col-2">
+							<span class="producto-precio align-bottom">{{i[3]}}</span>
+						</div>
+						<div class="col-2">
+							<a href="/admin/editar/{{i[0]}}"><i class="fa-solid fa-pen" data-bs-toggle="tooltip" data-bs-placement="top" title="editar"></i></a>
+							<span>&nbsp;&nbsp;&nbsp;</span>
+							<a href="/admin/borrar_producto/{{i[0]}}" data-bs-toggle="tooltip" data-bs-placement="top" title="eliminar"><i class="fa-solid fa-trash"></i></a>
+						</div>
+					</div>
+					<hr>
+            	{% endfor%}
+
+				<a href="/admin/crear" class="btn btn-success">Crear producto</a>
+			</div>
+		</main>
+		<!-- FIN CONTENIDO DE LA PÁGINA -->
+		</div>
+
+		{% include 'backend/_modulo_js_back.html' %}
+
+		{% include 'frontend/_modulo_whatsapp.html' %}
+
+		{% include 'frontend/_modulo_footer.html' %}
+	</body>
+</html>

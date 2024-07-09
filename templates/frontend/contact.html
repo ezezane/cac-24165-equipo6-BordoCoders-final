@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		{% include 'frontend/_modulo_head.html' %}
+	</head>
+	<body>
+		{% include 'frontend/_modulo_header_carrousel.html' %}
+
+		{% include 'frontend/_modulo_header_logo.html' %}
+
+		{% include 'frontend/_modulo_menu.html' %}
+
+		
+		<!-- CONTENIDO DE LA PÁGINA -->
+		<!--Formulario de contacto-->
+		<main class="main-img">
+			<div class="form">
+				<div class="title">
+					<h2>¡Suma nuestros perfumes a tu emprendimiento!</h2>
+				</div>
+				<div class="subtitle">
+					<p>Llená el formulario y convertite en revendedor</p>
+				</div>
+
+				<form action="#" id="form" onsubmit="return validarEmail()">
+					<!--Seccion de datos personales-->
+					<h3>Datos personales</h3>
+					<br>
+					<div class="form-inputs-grid">
+						<div class="nombre-grid">
+							<label for="nombre">Nombre/s</label><br>
+							<input type="text" name="nombre" id="nombre" required>
+						</div>
+						<div class="apellido-grid">
+							<label for="apellido">Apellido</label><br>
+							<input type="text" name="apellido" id="apellido" required>
+						</div>
+						<div class="nacimiento-grid">
+							<label for="f-nac">Fecha de Nacimiento</label><br>
+							<input type="date" name="f-nac" id="f-nac" max="2007-01-01" min="1920-12-31" required>
+						</div>
+						<div class="genero-grid">
+							<label>Género</label><br>
+							<div class="genero-flex">
+								<input type="radio" id="masc" name="genero" value="masculino">
+								<label for="masc">Masculino</label><br>
+								<input type="radio" id="fem" name="genero" value="femenino">
+								<label for="fem">Femenino</label><br>
+								<input type="radio" id="otro" name="genero" value="Otro">
+								<label for="otro">Otro</label>
+							</div>
+						</div>
+
+						<!--Seccion Contacto-->
+						<div class="contacto-grid">
+							<h3>Contacto</h3>
+						</div>
+						<div class="email-grid">
+							<label for="email">Email</label><br>
+							<input type="email" name="mail" id="email" value required>
+						</div>
+						<div class="conf-email-grid">
+							<label for="conf-email">Confirmar Email</label><br>
+							<input type="email" name="conf-email" id="conf-email" value required>
+						</div>
+						<div class="tel-grid">
+							<label for="tel">Telefono</label><br>
+							<input type="tel" name="tel" id="tel" pattern="[0-9]{10}" required>
+						</div>
+						<div class="provincia-grid">
+							<label for="provincia">Provincia</label><br>
+							<select name="provincia" id="provincia">
+								<option value="mendoza">Mendoza</option>
+								<option value="caba">CABA</option>
+								<option value="cordoba">Cordoba</option>
+								<option value="santa-fe">Santa Fe</option>
+								<option value="buenos-aires">Buenos Aires</option>
+							</select>
+						</div>
+						<div class="direccion-grid">
+							<label for="direccion">Direccion</label><br>
+							<input type="text" name="direccion" id="direccion" required>
+						</div>
+						<div class="terminos-grid">
+							<input type="checkbox" name="term" id="term" required>
+							<label for="term">He leido y acepto los <a href="#">Terminos y Condiciones</a></label><br>
+						</div>
+						<div class="boton-grid">
+							<input class="boton-contact" type="submit" value="Enviar">
+						</div>
+					</div>
+				</form>
+			</div>
+		</main>
+		<!-- FIN CONTENIDO DE LA PÁGINA -->
+
+
+		{% include 'frontend/_modulo_whatsapp.html' %}
+
+		{% include 'frontend/_modulo_footer.html' %}
+
+		{% include 'frontend/_modulo_js_front.html' %}
+	</body>
+</html>
