@@ -1,14 +1,14 @@
-# eliminamos la base
-DROP DATABASE IF EXISTS Borbocoders;
+-- # eliminamos la base
+-- DROP DATABASE IF EXISTS Borbocoders;
 
-# creamos la base de datos, con charset UTF8 para que tome correctamente los ascentos
-CREATE DATABASE IF NOT EXISTS Borbocoders CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+-- # creamos la base de datos, con charset UTF8 para que tome correctamente los ascentos
+-- CREATE DATABASE IF NOT EXISTS Borbocoders CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 
-# usamos la base de datos creada
-USE Borbocoders;
+-- # usamos la base de datos creada
+-- USE Borbocoders;
 
-DROP TABLE productos;
-# creamos a tabla productos
+-- DROP TABLE productos;
+-- # creamos a tabla productos
 CREATE TABLE productos (
     id TINYINT(255) AUTO_INCREMENT PRIMARY KEY,
     marca VARCHAR(255) NOT NULL,
